@@ -33,7 +33,12 @@ methods:{
 
 <style lang="scss">
 @use './style/main.scss';
-.d-flex{
+body{
+  background-color: rgb(42, 42, 42);
+}
+.container{
   gap: 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 </style>
