@@ -14,7 +14,8 @@ export default{
 <div class="card" style="width: 25rem; padding: 10px;">
   <img :src="`${baseUrl}/storage/${propsProject.img}`" class="card-img" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{ propsProject.name }}</h5>
+    <router-link class="router-link" :to="{name: 'SingleProject', params: {slug: propsProject.slug}}"><h5 class="card-title">{{ propsProject.name }}</h5></router-link>
+    
     <div class="d-flex justify-content-between">
         <div>
             <p v-if="propsProject.type" class="card-text">
@@ -40,6 +41,10 @@ export default{
 </template>
 
 <style lang="scss">
+.router-link{
+    text-decoration: none;
+    color: black;
+}
 .card{
     background-color: rgb(208, 250, 253) !important;
     img{
