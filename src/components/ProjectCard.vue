@@ -12,7 +12,7 @@ export default{
 <h3></h3>
 <template>
 <div class="card" style="width: 25rem; padding: 10px;">
-  <img :src="`${baseUrl}/storage/${propsProject.img}`" class="card-img" alt="...">
+  <!-- <img :src="`${baseUrl}/storage/${propsProject.img}`" class="card-img" alt="..."> -->
   <div class="card-body">
     <router-link class="router-link" :to="{name: 'SingleProject', params: {slug: propsProject.slug}}"><h5 class="card-title">{{ propsProject.name }}</h5></router-link>
     
@@ -31,11 +31,6 @@ export default{
             </ul>
         </div>
     </div>
-    <p class="card-text" id="desc">
-        <span class="text-bold">Description:</span> 
-        <br>
-        {{ propsProject.description }}
-    </p>      
   </div>
 </div>
 </template>
@@ -45,8 +40,34 @@ export default{
     text-decoration: none;
     color: black;
 }
+:root{
+    --gradient: linear-gradient(
+      45deg,
+      #845ec2,
+      #d65db1,
+      #ff6f91,
+      #ff9671,
+      #ffc75f,
+      #f9f871  
+    );
+    --gradient2: linear-gradient(
+      45deg,
+      #d0ca24 0%,
+      #2b2a2b 35%,
+      #2b2a2b 65%,
+      #ffffff 80%
+    );
+    --gradient-2: linear-gradient(
+        53deg, 
+        rgba(180,34,195,1) 0%, 
+        rgba(13,18,162,1) 45%, 
+        rgba(45,253,100,1) 90%
+    );
+    --color-neon2: hsl(317 100% 54%);
+    --color-neon: hsl(60 100% 54%);
+}
+
 .card{
-    background-color: rgb(208, 250, 253) !important;
     img{
         max-height: 284px;
     }

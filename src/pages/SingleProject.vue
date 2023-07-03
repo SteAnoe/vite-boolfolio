@@ -13,6 +13,9 @@ created(){
 	this.getSingleProjects();
 },
 methods:{
+    goBack(){
+        this.$router.back();
+    },
 	getSingleProjects(){
 		axios.get(`${this.baseUrl}/api/projects/${this.$route.params.slug}`)
 		.then((response)=>{
@@ -59,11 +62,25 @@ methods:{
               </p>      
             </div>
         </div>
+        
     </div>
+    <a href="" class="btn btn-warning" @click.prevent="goBack">Go Back</a>
 </template>
 
 <style lang="scss" scoped>
- h1{
-    color:white
- }
+h1{
+   color:white
+}
+.container{
+    // height: calc(100vh - 56px);
+    padding-top: 100px;
+}
+
+.btn-warning{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
 </style>
